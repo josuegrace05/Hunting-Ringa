@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="false"
+    >
+
+  <TextView
+      android:text="position"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:id="@+id/position_new_cell_position_name"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/imageView"
+      android:layout_marginEnd="8dp"/>
+  <TextView
+      android:text="company"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:id="@+id/position_new_cell_position_company"
+      android:layout_marginTop="8dp"
+      android:textStyle="normal"
+      app:layout_constraintTop_toBottomOf="@+id/position_new_cell_position_name"
+      app:layout_constraintStart_toStartOf="parent"
+      android:layout_marginStart="16dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:layout_marginBottom="16dp"
+      app:layout_constraintEnd_toStartOf="@+id/imageView"
+      android:layout_marginEnd="8dp"/>
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/imageView"
+      app:srcCompat="@android:drawable/ic_menu_edit"
+      android:tint="@color/colorAccent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:foregroundGravity="center_vertical"
+      android:layout_marginEnd="8dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"/>
+  <View
+      android:layout_width="0dp"
+      android:layout_height="1dp"
+      android:id="@+id/view"
+      android:layout_marginBottom="8dp"
+      android:background="@color/bottomLineColor"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      android:layout_marginStart="16dp"
+      app:layout_constraintEnd_toEndOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
