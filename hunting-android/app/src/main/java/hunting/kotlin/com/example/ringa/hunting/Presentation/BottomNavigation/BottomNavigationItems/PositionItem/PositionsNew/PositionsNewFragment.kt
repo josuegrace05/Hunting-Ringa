@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import hunting.kotlin.com.example.ringa.hunting.Domain.Entities.Position
-import hunting.kotlin.com.example.ringa.hunting.MyApplication
+import hunting.kotlin.com.example.ringa.hunting.HuntingApplication
 import hunting.kotlin.com.example.ringa.hunting.Presentation.Helper.BaseRecyclerViewAdapter.BaseViewHolderCallback
 import hunting.kotlin.com.example.ringa.hunting.R
 import android.support.design.widget.Snackbar
@@ -43,7 +43,7 @@ class PositionsNewFragment:PositionsNewFragmentLogic,Fragment(),BaseViewHolderCa
 
   fun setupRecyclerView(view:View){
     recyclerView = view.findViewById(R.id.fragment_positions_new_recycler_view)
-    recyclerView?.layoutManager = LinearLayoutManager(MyApplication.applicationContext())
+    recyclerView?.layoutManager = LinearLayoutManager(HuntingApplication.applicationContext())
     positionsRecyclerViewAdapter = BaseRecyclerViewAdapter<Position>(object : BaseAdapterInterface {
       override fun onCreateViewHolder(parent: ViewGroup?): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.positions_new_cell,parent,false)

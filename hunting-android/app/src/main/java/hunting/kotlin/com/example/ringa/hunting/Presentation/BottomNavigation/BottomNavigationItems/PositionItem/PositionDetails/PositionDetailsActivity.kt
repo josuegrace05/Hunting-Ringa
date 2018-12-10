@@ -12,7 +12,7 @@ import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
 import hunting.kotlin.com.example.ringa.hunting.Domain.Entities.Position
-import hunting.kotlin.com.example.ringa.hunting.MyApplication
+import hunting.kotlin.com.example.ringa.hunting.HuntingApplication
 import hunting.kotlin.com.example.ringa.hunting.Presentation.Helper.BaseLayoutHolders.TextFieldWithImageAndDescriptionHolder
 import hunting.kotlin.com.example.ringa.hunting.Presentation.ReferPosition.ReferPositionActivity
 import hunting.kotlin.com.example.ringa.hunting.R
@@ -166,11 +166,11 @@ class PositionDetailsActivity : PositionDetailsActivityLogic, AppCompatActivity(
           activity,
           Pair.create<View, String>(
             positionCompanyTextView,
-            MyApplication.applicationContext()?.getString(R.string.positions_details_transition_company)
+            HuntingApplication.applicationContext()?.getString(R.string.positions_details_transition_company)
           ),
           Pair.create<View, String>(
             positionNameTextView,
-            MyApplication.applicationContext()?.getString(R.string.positions_details_transition_name)
+            HuntingApplication.applicationContext()?.getString(R.string.positions_details_transition_name)
           )
         )
         intent.putExtra(IntentExtra.POSITION_ID.tag,positionId)

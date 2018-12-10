@@ -1,12 +1,16 @@
 package hunting.kotlin.com.example.ringa.hunting.Presentation.BottomNavigation
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
+import hunting.kotlin.com.example.ringa.hunting.HuntingApplication
+import hunting.kotlin.com.example.ringa.hunting.Infrastructure.SessionManager
+import hunting.kotlin.com.example.ringa.hunting.Presentation.Auth.Login.LoginActivity
 import hunting.kotlin.com.example.ringa.hunting.Presentation.BottomNavigation.BottomNavigationItems.ContactsItem.ContactsFragment
 import hunting.kotlin.com.example.ringa.hunting.Presentation.BottomNavigation.BottomNavigationItems.PositionItem.PositionsFragment
 import hunting.kotlin.com.example.ringa.hunting.Presentation.BottomNavigation.BottomNavigationItems.ProfileItem.ProfileFragment
@@ -28,9 +32,13 @@ class MainActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
     setContentView(R.layout.activity_main)
     getContactsPermission()
     setupMainNavigationView()
+      if(!SessionManager().isLogged()){
+          startActivity(Intent(this,LoginActivity::class.java))
+      }
   }
 
   fun setupMainNavigationView() {

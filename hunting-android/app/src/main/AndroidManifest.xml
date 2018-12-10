@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hunting.kotlin.com.example.ringa.hunting">
-  <uses-permission android:name="android.permission.INTERNET"/>
-  <uses-permission android:name="android.permission.READ_CONTACTS" />
-  <application
-      android:name=".MyApplication"
-      android:allowBackup="true"
-      android:icon="@mipmap/ic_launcher"
-      android:label="@string/app_name"
-      android:roundIcon="@mipmap/ic_launcher_round"
-      android:supportsRtl="true"
-      android:theme="@style/AppTheme">
-    <activity android:name="hunting.kotlin.com.example.ringa.hunting.Presentation.BottomNavigation.MainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="hunting.kotlin.com.example.ringa.hunting">
 
-        <category android:name="android.intent.category.LAUNCHER"/>
-      </intent-filter>
-    </activity>
-    <activity android:name="hunting.kotlin.com.example.ringa.hunting.Presentation.AddContactActivity"/>
-    <activity android:name="hunting.kotlin.com.example.ringa.hunting.Presentation.InvitationHandleActivity">
-      <intent-filter android:autoVerify="true">
-        <action android:name="android.intent.action.VIEW"/>
-        <category android:name="android.intent.category.DEFAULT"/>
-        <category android:name="android.intent.category.BROWSABLE"/>
-        <data
-            android:scheme="http"
-            android:host="192.168.0.52"
-            android:port="8090"
-            android:pathPattern="/invitation"/>
-      </intent-filter>
-    </activity>
-    <activity
-        android:name="hunting.kotlin.com.example.ringa.hunting.Presentation.BottomNavigation.BottomNavigationItems.PositionItem.PositionDetails.PositionDetailsActivity"
-        android:theme="@style/AppTheme.Detail">
-    </activity>
-    <activity android:name="hunting.kotlin.com.example.ringa.hunting.Presentation.ReferPosition.ReferPositionActivity"/>
-  </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <application
+            android:name=".HuntingApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".Presentation.BottomNavigation.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Presentation.AddContactActivity"/>
+        <activity android:name=".Presentation.InvitationHandleActivity">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                        android:host="192.168.0.52"
+                        android:pathPattern="/invitation"
+                        android:port="8090"
+                        android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".Presentation.BottomNavigation.BottomNavigationItems.PositionItem.PositionDetails.PositionDetailsActivity"
+                android:theme="@style/AppTheme.Detail">
+        </activity>
+        <activity android:name=".Presentation.ReferPosition.ReferPositionActivity"/>
+        <activity android:name=".Presentation.Auth.Login.LoginActivity">
+        </activity>
+        <activity android:name=".Presentation.Auth.SignUpActivity">
+        </activity>
+    </application>
 
 </manifest>

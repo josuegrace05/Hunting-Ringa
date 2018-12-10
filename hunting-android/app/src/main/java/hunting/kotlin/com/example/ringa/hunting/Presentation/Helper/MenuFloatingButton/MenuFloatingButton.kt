@@ -2,7 +2,7 @@ package hunting.kotlin.com.example.ringa.hunting.Presentation.Helper.MenuFloatin
 
 import android.support.design.widget.FloatingActionButton
 import android.view.View
-import hunting.kotlin.com.example.ringa.hunting.MyApplication
+import hunting.kotlin.com.example.ringa.hunting.HuntingApplication
 import hunting.kotlin.com.example.ringa.hunting.R
 
 class MenuFloatingButton(menuFloatingButton:FloatingActionButton){
@@ -38,7 +38,7 @@ class MenuFloatingButton(menuFloatingButton:FloatingActionButton){
     }
   }
   private fun getTranslation():Float{
-    return  MyApplication.applicationContext()?.resources?.getDimension(R.dimen.standard_64) ?: 0.toFloat()
+    return  HuntingApplication.applicationContext()?.resources?.getDimension(R.dimen.standard_64) ?: 0.toFloat()
   }
 
   private fun closeFABMenu() {

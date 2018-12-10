@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import hunting.kotlin.com.example.ringa.hunting.Domain.Entities.Profile
-import hunting.kotlin.com.example.ringa.hunting.MyApplication
+import hunting.kotlin.com.example.ringa.hunting.HuntingApplication
 import hunting.kotlin.com.example.ringa.hunting.Presentation.Helper.BaseRecyclerViewAdapter.BaseAdapterInterface
 import hunting.kotlin.com.example.ringa.hunting.Presentation.Helper.BaseRecyclerViewAdapter.BaseRecyclerViewAdapter
 import hunting.kotlin.com.example.ringa.hunting.R
@@ -47,7 +47,7 @@ class ReferPositionActivity:ReferPositionActivityLogic,AppCompatActivity(),MenuF
 
   fun setupRecyclerView(){
     recyclerView = findViewById(R.id.activity_refer_position_recycler_view)
-    recyclerView?.layoutManager = LinearLayoutManager(MyApplication.applicationContext())
+    recyclerView?.layoutManager = LinearLayoutManager(HuntingApplication.applicationContext())
     positionsRecyclerViewAdapter = BaseRecyclerViewAdapter<Profile>(object : BaseAdapterInterface {
       override fun onCreateViewHolder(parent: ViewGroup?): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.refer_position_cell,parent,false)
