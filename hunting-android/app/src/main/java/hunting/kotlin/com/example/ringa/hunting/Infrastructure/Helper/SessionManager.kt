@@ -1,6 +1,5 @@
-package hunting.kotlin.com.example.ringa.hunting.Infrastructure
+package hunting.kotlin.com.example.ringa.hunting.Infrastructure.Helper
 
-import android.app.Application
 import android.content.SharedPreferences
 import hunting.kotlin.com.example.ringa.hunting.Domain.Entities.User
 import hunting.kotlin.com.example.ringa.hunting.HuntingApplication
@@ -22,7 +21,8 @@ class SessionManager(){
   fun getUser(): User{
     val pref: SharedPreferences = HuntingApplication.applicationContext()!!.getSharedPreferences(PREF_ID,0)
     return User(pref.getString(UserKeys.Name.key,"") ?: "",
-      pref.getString(UserKeys.Email.key,"") ?: "",pref.getString(UserKeys.Token.key,"") ?: "")
+      pref.getString(UserKeys.Email.key,"") ?: "",pref.getString(
+            UserKeys.Token.key,"") ?: "")
   }
 
   fun saveUser(user:User){

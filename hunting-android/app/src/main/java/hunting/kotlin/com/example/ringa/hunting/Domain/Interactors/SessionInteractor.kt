@@ -4,11 +4,11 @@ import hunting.kotlin.com.example.ringa.hunting.Domain.Entities.User
 import hunting.kotlin.com.example.ringa.hunting.Infrastructure.Retrofit.Requests.SessionRequest
 
 class SessionInteractor {
-  fun login(email:String,password:String,completion:(isSuccess:Boolean, userData:User?, errorMessage:String?)->(Unit)){
+  fun login(email:String,password:String,completion:(isSuccess:Boolean, token:String?, errorMessage:String?)->(Unit)){
     SessionRequest().
-      login(email,password) { isSuccess, userData, errorMessage->
+      login(email,password) { isSuccess, token, errorMessage->
         if(isSuccess){
-          completion(true,userData,errorMessage)
+          completion(true,token,errorMessage)
         }else{
           completion(false,null,errorMessage)
         }

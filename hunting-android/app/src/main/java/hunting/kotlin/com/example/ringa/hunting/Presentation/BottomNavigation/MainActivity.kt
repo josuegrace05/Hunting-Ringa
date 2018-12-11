@@ -8,8 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
-import hunting.kotlin.com.example.ringa.hunting.HuntingApplication
-import hunting.kotlin.com.example.ringa.hunting.Infrastructure.SessionManager
+import hunting.kotlin.com.example.ringa.hunting.Infrastructure.Helper.SessionManager
 import hunting.kotlin.com.example.ringa.hunting.Presentation.Auth.Login.LoginActivity
 import hunting.kotlin.com.example.ringa.hunting.Presentation.BottomNavigation.BottomNavigationItems.ContactsItem.ContactsFragment
 import hunting.kotlin.com.example.ringa.hunting.Presentation.BottomNavigation.BottomNavigationItems.PositionItem.PositionsFragment

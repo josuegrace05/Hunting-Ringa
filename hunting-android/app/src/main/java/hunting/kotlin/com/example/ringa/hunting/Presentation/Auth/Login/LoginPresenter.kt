@@ -7,9 +7,9 @@ class LoginPresenter(): LoginPresenterInterface{
     var viewLoigc: LoginActivityInterface? = null
 
     override fun Login(email:String, password:String){
-        SessionInteractor().login(email,password){isSuccess, userData, errorMessage ->
+        SessionInteractor().login(email,password){isSuccess, token, errorMessage ->
             if(isSuccess){
-                viewLoigc?.finishActitity(userData)
+                viewLoigc?.closeActivity(token!!)
             }else{
                 viewLoigc?.displayApiErrorMessage(errorMessage!!)
             }

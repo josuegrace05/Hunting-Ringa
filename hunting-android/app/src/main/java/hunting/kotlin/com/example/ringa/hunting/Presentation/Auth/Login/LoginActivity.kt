@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import hunting.kotlin.com.example.ringa.hunting.Domain.Entities.User
-import hunting.kotlin.com.example.ringa.hunting.Infrastructure.SessionManager
+import hunting.kotlin.com.example.ringa.hunting.Infrastructure.Helper.SessionManager
 import hunting.kotlin.com.example.ringa.hunting.R
 
 class LoginActivity : AppCompatActivity(), LoginActivityInterface {
@@ -35,9 +35,10 @@ class LoginActivity : AppCompatActivity(), LoginActivityInterface {
         loginBt.setOnClickListener {presenter?.Login(email.text.toString(),password.text.toString())}
     }
 
-    override fun finishActitity(userData:User) {
-        SessionManager().saveUser(userData)
-        this.finishActitity()
+    override fun closeActivity(token:String) {
+        SessionManager().saveUser(User("","",
+            token))
+        this.finish()
     }
 
     override fun displayApiErrorMessage(errorMessage: String) {
